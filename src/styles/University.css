@@ -1,0 +1,53 @@
+/* University.css */
+.university-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #b6afb3; /* Pink background color */
+}
+
+.university-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background-color: #8c6b91; /* Lighter pink background color */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.university-header {
+  margin-bottom: 20px;
+}
+
+.university-selection {
+  margin-top: 20px;
+}
+
+h4 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #6a1b9a; /* Purple text color */
+}
+
+.select-field {
+  padding: 10px;
+  width: 100%;
+  max-width: 300px;
+  margin: auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: white;
+}
+
+.select-field:focus {
+  outline: none;
+  border-color: #6a1b9a;
+  box-shadow: 0 0 5px rgba(106, 27, 154, 0.5);
+}

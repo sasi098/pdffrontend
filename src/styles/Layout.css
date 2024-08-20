@@ -1,0 +1,30 @@
+/* Layout.css */
+.full {
+  height: 100vh;
+  background-color: #b6afb3; /* Pink background color */
+}
+.layout {
+  text-align: center;
+  padding: 20px;
+}
+
+.auth-buttons {
+  text-align: right;
+}
+
+.button-link {
+  padding: 20px;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #6a1b9a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #4a148c;
+}
