@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../styles/Auth.css"; // Import the CSS file
+import img from "../images/back.jpg";
 
 function Signup() {
   const [uname, setuname] = useState("");
@@ -28,51 +29,51 @@ function Signup() {
   };
 
   return (
-    <div className="auth-page">
-      <div className="auth-container">
-        <div className="auth-header">
+    <div className="auth-container" style={{ backgroundImage: `url(${img})` }}>
+      <div class="wrapper">
+        <form onSubmit={add}>
           <h1>Signup</h1>
-        </div>
-        <form onSubmit={add} className="auth-form">
-          <div className="input-group">
-            <label htmlFor="uname">Username</label>
+          <div class="input-box">
             <input
               type="text"
               id="uname"
               placeholder="Enter your username"
               onChange={(e) => setuname(e.target.value)}
-              className="input-field"
             />
+            <i class="bx bxs-user"></i>
           </div>
-          <div className="input-group">
-            <label htmlFor="email">Email</label>
+          <div class="input-box">
             <input
               type="email"
               id="email"
               placeholder="Enter your email"
               onChange={(e) => setemail(e.target.value)}
-              className="input-field"
             />
           </div>
-          <div className="input-group">
-            <label htmlFor="pass">Password</label>
+          <div class="input-box">
             <input
               type="password"
               id="pass"
               placeholder="Enter your password"
               onChange={(e) => setpass(e.target.value)}
-              className="input-field"
             />
+            <i class="bx bxs-lock-alt"></i>
           </div>
-          <div className="terms">
-            <input type="checkbox" id="terms" required />
-            <label htmlFor="terms">
-              I have accepted the terms and conditions
+          <div class="remember-forget">
+            <label>
+              <input type="checkbox"></input>
+              Remember me
             </label>
+            {/* <a href="#"> Forgot Password?</a> */}
           </div>
-          <button type="submit" className="auth-button">
-            Signup
+          <button type="submit" class="btn">
+            Sign Up
           </button>
+          {/* <div class="register-link">
+            <p>
+              Don't have a account? <a href="#">Register</a>
+            </p>
+          </div> */}
         </form>
       </div>
     </div>
