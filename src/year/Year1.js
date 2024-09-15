@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 function Year1() {
   return (
-    <div style={{ backgroundColor: "#b6afb3", minHeight: "100vh" }}>
+    <div style={{ minHeight: "100vh" }}>
       <h3>hey this first years page</h3>
       <div style={{ display: "flex", padding: "20px" }} class={Container}>
         <div style={{ padding: "30px" }}>
