@@ -1,10 +1,12 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
 
-import Navbar1 from "./components/Navbar1";
-import Navabr2 from "./components/Navabr2";
+import Navabr from "./components/Navabr";
+import Footer from "./components/Footer";
+import Contact from "./components/Contact";
+import Aboutuser from "./user/Aboutuser";
+import Userprofile from "./components/userview/Userprofile";
 import Developer from "./components/Developer";
 import Layout from "./components/Layout"; //used for layout
 import Login from "./components/Login"; //used for login from layout
@@ -36,39 +38,18 @@ import Link3 from "./links/Link3";
 import Yearpull from "./pullareddy/Yearpull";
 function App() {
   const [color, setcolor] = useState("dark");
-  const [name, setname] = useState("user");
   const backgroundolor = color === "dark" ? "#222" : "#fff";
-  const location = useLocation();
-
-  const renderHeader = () => {
-    if (
-      location.pathname === "/" ||
-      location.pathname === "/Login" ||
-      location.pathname === "/Signup" ||
-      location.pathname === "/Developer"
-    ) {
-      return <Navbar1 color={color} setcolor={setcolor} />;
-    }
-    return (
-      <Navabr2
-        color={color}
-        setcolor={setcolor}
-        name={name}
-        setname={setname}
-      />
-    );
-  };
 
   return (
     <div style={{ backgroundColor: backgroundolor, minHeight: "100vh" }}>
-      {renderHeader()}
+      {/* {renderHeader()} */}
+      <Navabr color={color} setcolor={setcolor} />
       <Routes>
         <Route path="/" element={<Layout />} />
         <Route path="/Developer" element={<Developer />} />
-        <Route
-          path="/Login"
-          element={<Login name={name} setname={setname} />}
-        />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/profile" element={<Userprofile />} />
+        <Route path="/Aboutuser" element={<Aboutuser />} />
         <Route path="/Page1" element={<Page1 />} />
         <Route path="/Signup" element={<Signup />} />
         <Route path="/University" element={<University />} />
@@ -90,7 +71,9 @@ function App() {
         <Route path="/Yeartea3/:category" element={<Yeartea3 />} />
         <Route path="/Link3" element={<Link3 />} />
         <Route path="/Yearpull" element={<Yearpull />} />
+        <Route path="/Contact" element={<Contact />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

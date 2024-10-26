@@ -11,7 +11,7 @@
 }
 
 .module-page {
-  background-color: #b6afb3; /* Slightly lighter background for module section */
+  /* Slightly lighter background for module section */
   padding: 20px;
   border-radius: 8px;
 }

@@ -3,12 +3,12 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../styles/Auth.css"; // Import the CSS file
 import img from "../images/back.jpg";
-
-function Login({ name, setname }) {
+import { Usecreate } from "../context-user/Usecreate";
+function Login() {
   const [uname, setuname] = useState("");
   const [pass, setpwd] = useState("");
   const navigate = useNavigate();
-
+  const { setuser } = Usecreate();
   const check = async (event) => {
     event.preventDefault();
     const data = { uname, pass };
@@ -17,7 +17,8 @@ function Login({ name, setname }) {
       const res = await axios.post(url, data);
       if (res.status === 201) {
         navigate("/University");
-        setname(uname);
+        setuser(uname);
+        // setname(uname);
       } else {
         alert("Invalid Credentials");
       }

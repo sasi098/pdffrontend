@@ -3,13 +3,13 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../styles/Auth.css"; // Import the CSS file
 import img from "../images/back.jpg";
-
+import { Usecreate } from "../context-user/Usecreate";
 function Signup() {
   const [uname, setuname] = useState("");
   const [pass, setpass] = useState("");
   const [email, setemail] = useState("");
   const navigate = useNavigate();
-
+  const { setuser } = Usecreate();
   const add = async (event) => {
     event.preventDefault();
     const data = { uname, pass, email };
@@ -18,6 +18,7 @@ function Signup() {
       const res = await axios.post(url, data);
       if (res.status === 201) {
         alert("User Created Successfully");
+        setuser(uname);
         navigate("/Year");
       } else {
         console.log("error in user creation");
